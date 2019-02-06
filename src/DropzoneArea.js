@@ -155,13 +155,13 @@ class DropzoneArea extends Component{
         });
     };
     render(){
-        const {classes, acceptedFiles} = this.props;
+        const {classes} = this.props;
         const showPreviews = this.props.showPreviews && this.state.fileObjects.length > 0;
         const showPreviewsInDropzone = this.props.showPreviewsInDropzone && this.state.fileObjects.length > 0;
         return (
             <Fragment>
                 <Dropzone
-                    accept={acceptedFiles ? acceptedFiles.join(','): undefined}
+                    accept={this.props.acceptedFiles.join(',')}
                     onDrop={this.onDrop.bind(this)}
                     onDropRejected={this.handleDropRejected.bind(this)}
                     className={classNames(classes.dropZone,this.props.dropZoneClass)}
