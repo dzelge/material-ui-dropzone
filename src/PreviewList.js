@@ -42,7 +42,7 @@ const styles = {
 function PreviewList(props) {
     const {fileObjects, handleRemove, showFileNames, classes} = props;
     return (
-        <Grid container spacing={0} justify={"flex-start"} direction={"row"} >
+        <Grid container spacing={0}  >
             {
                 fileObjects.map((fileObject, i) => {
                     return (
