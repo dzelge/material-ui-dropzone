@@ -161,7 +161,7 @@ class DropzoneArea extends Component{
         return (
             <Fragment>
                 <Dropzone
-                    accept={this.props.acceptedFiles.join(',')}
+                    //accept={this.props.acceptedFiles.join(',')}
                     onDrop={this.onDrop.bind(this)}
                     onDropRejected={this.handleDropRejected.bind(this)}
                     className={classNames(classes.dropZone,this.props.dropZoneClass)}
