@@ -42,21 +42,18 @@ const styles = {
 function PreviewList(props) {
     const {fileObjects, handleRemove, showFileNames, classes} = props;
     return (
-        <Grid container spacing={24}>
+        <Grid container spacing={0} justify={"flex-start"} direction={"row"} >
             {
                 fileObjects.map((fileObject, i) => {
                     return (
-                        <Grid item xs={4} key={i} className={classes.imageContainer}>
-
-                            <p>{fileObject.file.name}
-                                <Fab onClick={handleRemove(i)}
-                                     aria-label="Delete"
-                                     size={"small"}
-                                     className={classes.removeBtn}>
-                                    <DeleteIcon/>
-                                </Fab>
-                            </p>
-                        </Grid>
+                        <p>{fileObject.file.name}
+                            <Fab onClick={handleRemove(i)}
+                                 aria-label="Delete"
+                                 size={"small"}
+                                 className={classes.removeBtn}>
+                                <DeleteIcon/>
+                            </Fab>
+                        </p>
                     );
                 })
             }
