@@ -11,8 +11,6 @@ const styles = {
         opacity: 0,
         top: -5,
         right: -5,
-        width: 40,
-        height: 40
     },
     smallPreviewImg: {
         height: 100,
