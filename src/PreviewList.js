@@ -1,7 +1,7 @@
 import React from "react";
 import {withStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import DeleteIcon from '@material-ui/icons/Delete'; 
+import DeleteIcon from '@material-ui/icons/Delete';
 import Fab from '@material-ui/core/Fab';
 
 const styles = {
@@ -41,24 +41,23 @@ const styles = {
     }
 }
 
-function PreviewList(props){
+function PreviewList(props) {
     const {fileObjects, handleRemove, showFileNames, classes} = props;
-    return(
+    return (
         <Grid container spacing={8}>
             {
                 fileObjects.map((fileObject, i) => {
                     return (
                         <Grid item xs={4} key={i} className={classes.imageContainer}>
 
-                            {showFileNames &&
-                                <p>{fileObject.file.name}</p>
-                            }
-
-                            <Fab onClick={handleRemove(i)}
-                                aria-label="Delete" 
-                                className={classes.removeBtn}>
-                                <DeleteIcon />
-                            </Fab>
+                            <p>{fileObject.file.name}
+                                <Fab onClick={handleRemove(i)}
+                                     aria-label="Delete"
+                                     size={"small"}
+                                     className={classes.removeBtn}>
+                                    <DeleteIcon/>
+                                </Fab>
+                            </p>
                         </Grid>
                     );
                 })
