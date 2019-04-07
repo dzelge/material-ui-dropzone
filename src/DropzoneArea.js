@@ -155,13 +155,15 @@ class DropzoneArea extends Component{
         });
     };
     render(){
-        const {classes} = this.props;
+        const {classes, acceptedFiles} = this.props;
         const showPreviews = this.props.showPreviews && this.state.fileObjects.length > 0;
         const showPreviewsInDropzone = this.props.showPreviewsInDropzone && this.state.fileObjects.length > 0;
+        const aFiles = acceptedFiles ? acceptedFiles.join(',') : undefined;
+       
         return (
             <Fragment>
                 <Dropzone
-                    accept={this.props.acceptedFiles.join(',')}
+                    accept={aFiles}
                     onDrop={this.onDrop.bind(this)}
                     onDropRejected={this.handleDropRejected.bind(this)}
                     className={classNames(classes.dropZone,this.props.dropZoneClass)}
@@ -218,7 +220,8 @@ class DropzoneArea extends Component{
 }
 
 DropzoneArea.defaultProps = {
-    acceptedFiles: ['image/*', 'video/*', 'application/*'],
+    //acceptedFiles: ['image/*', 'video/*', 'application/*'],
+    acceptedFiles: undefied,
     filesLimit: 3,
     maxFileSize: 3000000,
     dropzoneText: 'Drag and drop an image file here or click',
